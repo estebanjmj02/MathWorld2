@@ -5,7 +5,7 @@ export const characters = [
     emoji: "🤖",
     role: "Robot inteligente experto en números.",
     personality: "Ordenado, curioso y paciente.",
-    phrase: "Un número a la vez también es avanzar.",
+    phrase: "Numi te apoya 🤖",
     color: "#55c7ff"
   },
   {
@@ -14,7 +14,7 @@ export const characters = [
     emoji: "✨",
     role: "Exploradora espacial matemática.",
     personality: "Imaginativa, serena y aventurera.",
-    phrase: "Las estrellas brillan cuando intentas de nuevo.",
+    phrase: "Luna te apoya ✨",
     color: "#b69cff"
   },
   {
@@ -23,7 +23,7 @@ export const characters = [
     emoji: "🦁",
     role: "León valiente y motivador.",
     personality: "Valiente, cálido y protector.",
-    phrase: "Tu valentía cuenta tanto como tu respuesta.",
+    phrase: "Max te apoya 🦁",
     color: "#ffd84d"
   },
   {
@@ -32,7 +32,7 @@ export const characters = [
     emoji: "👾",
     role: "Personaje digital experto en patrones.",
     personality: "Juguetón, veloz y observador.",
-    phrase: "Busca el patrón y el camino aparece.",
+    phrase: "Pixel te ayuda 👾",
     color: "#62e6b2"
   },
   {
@@ -41,7 +41,7 @@ export const characters = [
     emoji: "🐢",
     role: "Tortuga tranquila que enseña paso a paso.",
     personality: "Calmada, amable y clara.",
-    phrase: "Despacio también se llega muy lejos.",
+    phrase: "Tina te ayuda 🐢",
     color: "#8fd7ff"
   },
   {
@@ -50,7 +50,7 @@ export const characters = [
     emoji: "⚡",
     role: "Personaje energético para retos rápidos.",
     personality: "Dinámico, alegre y decidido.",
-    phrase: "Respira, mira y responde con energía.",
+    phrase: "Rayo te ayuda⚡",
     color: "#ffad68"
   }
 ];
