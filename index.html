@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MathWorld, videojuego educativo para fortalecer habilidades matemáticas básicas.">
+  <title>MathWorld</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Fredoka:wght@500;700&family=Nunito:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="particles-js" aria-hidden="true"></div>
+  <div class="ambient-orbit" aria-hidden="true">
+    <span>+</span><span>7</span><span>=</span><span>3</span><span>×</span><span>9</span>
+  </div>
+
+  <main class="app-shell">
+    <section id="screen-home" class="screen screen-active hero-screen" aria-labelledby="home-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Aventura matemática multisensorial</p>
+          <h1 id="home-title">MathWorld</h1>
+          <p class="hero-text">Aprende matemáticas explorando mundos mágicos llenos de diversión y desafíos.</p>
+
+          <form id="player-form" class="start-panel" autocomplete="off">
+            <label>
+              Nombre
+              <input id="first-name" name="firstName" type="text" maxlength="18" placeholder="Tu nombre" required>
+            </label>
+            <label>
+              Apellido
+              <input id="last-name" name="lastName" type="text" maxlength="18" placeholder="Tu apellido" required>
+            </label>
+            <fieldset>
+              <legend>Edad</legend>
+              <div class="age-options" role="radiogroup" aria-label="Selecciona tu edad">
+                <label><input type="radio" name="age" value="7" checked><span>7 años</span></label>
+                <label><input type="radio" name="age" value="8"><span>8 años</span></label>
+                <label><input type="radio" name="age" value="9"><span>9 años</span></label>
+                <label><input type="radio" name="age" value="10"><span>10 años</span></label>
+              </div>
+            </fieldset>
+            <button class="primary-action" type="submit">Comenzar aventura</button>
+          </form>
+        </div>
+        <div class="hero-stage" aria-label="Vista 3D de MathWorld">
+          <canvas id="three-canvas"></canvas>
+          <div class="floating-badge">Nivel amable</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-character" class="screen" aria-labelledby="character-title">
+      <header class="section-header">
+        <p class="eyebrow">Elige un guía</p>
+        <h2 id="character-title">Tu compañero de aventura</h2>
+      </header>
+      <div id="characters-grid" class="characters-grid"></div>
+    </section>
+
+    <section id="screen-map" class="screen" aria-labelledby="map-title">
+      <nav class="topbar" aria-label="Panel de progreso">
+        <div>
+          <p id="welcome-line" class="welcome-line">Hola</p>
+          <strong id="active-guide">Guía: Numi</strong>
+        </div>
+        <div class="stats">
+          <span id="points-pill">0 puntos</span>
+          <span id="stars-pill">0 estrellas</span>
+          <span id="level-pill">Nivel 1</span>
+        </div>
+        <div class="sound-controls">
+          <button id="music-toggle" class="icon-button" type="button" aria-label="Activar o pausar música">♪</button>
+          <button id="reset-progress" class="icon-button" type="button" aria-label="Reiniciar progreso">↻</button>
+        </div>
+      </nav>
+
+      <div class="progress-card" aria-label="Progreso de experiencia">
+        <div class="progress-meta">
+          <span>Experiencia</span>
+          <span id="xp-label">0 / 100</span>
+        </div>
+        <div class="progress-track"><div id="xp-bar" class="progress-fill"></div></div>
+      </div>
+
+      <header class="section-header map-heading">
+        <p class="eyebrow">Mapa de mundos</p>
+        <h2 id="map-title">Escoge tu próximo reto</h2>
+      </header>
+      <div id="worlds-grid" class="worlds-grid"></div>
+    </section>
+
+    <section id="screen-game" class="screen game-screen" aria-labelledby="game-title">
+      <nav class="gamebar" aria-label="Controles del reto">
+        <button id="back-map" class="secondary-action" type="button">Mapa</button>
+        <div>
+          <p id="game-world" class="eyebrow">Mundo</p>
+          <h2 id="game-title">Reto</h2>
+        </div>
+        <div class="stats">
+          <span id="challenge-count">1 / 5</span>
+          <span id="game-score">0 pts</span>
+        </div>
+      </nav>
+
+      <div class="coach-strip">
+        <div id="coach-avatar" class="coach-avatar">🤖</div>
+        <p id="instruction-text">Escucha la instrucción y juega con calma.</p>
+      </div>
+
+      <div class="game-layout">
+        <aside class="mini-panel">
+          <h3>Ayudas</h3>
+          <ul id="hint-list"></ul>
+          <div class="medal-slot" id="medal-slot">🏅</div>
+        </aside>
+        <section id="activity-area" class="activity-area" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <section id="screen-reward" class="screen reward-screen" aria-labelledby="reward-title">
+      <canvas id="confetti-canvas"></canvas>
+      <div class="reward-content">
+        <p class="eyebrow">¡Lo lograste!</p>
+        <h2 id="reward-title">Mundo completado</h2>
+        <p id="reward-message">Ganaste estrellas y experiencia.</p>
+        <div id="reward-badges" class="reward-badges"></div>
+        <button id="continue-map" class="primary-action" type="button">Continuar</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="libs/gsap/gsap.min.js"></script>
+  <script src="libs/howler/howler.min.js"></script>
+  <script src="libs/particles/particles.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

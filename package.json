@@ -1,0 +1,13 @@
+{
+  "name": "mathworld",
+  "version": "1.0.0",
+  "description": "Videojuego educativo web para fortalecer matemáticas básicas en niños con discalculia.",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve .",
+    "check": "node --check js/main.js"
+  },
+  "keywords": ["educacion", "matematicas", "discalculia", "html5", "javascript"],
+  "author": "MathWorld",
+  "license": "MIT"
+}
