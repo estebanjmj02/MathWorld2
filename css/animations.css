@@ -1,0 +1,48 @@
+@keyframes floaty {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -16px, 0) rotate(5deg); }
+}
+
+@keyframes pulseReward {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(20px) scale(.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ambient-orbit span {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+.ambient-orbit span:nth-child(even) {
+  animation-delay: -2.5s;
+}
+
+.screen-active .start-panel,
+.screen-active .character-card,
+.screen-active .world-card,
+.screen-active .activity-card,
+.reward-content {
+  animation: popIn .42s ease both;
+}
+
+.avatar,
+.world-icon,
+.coach-avatar,
+.medal-slot {
+  animation: pulseReward 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
