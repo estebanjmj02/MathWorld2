@@ -47,7 +47,7 @@ function explorationNumbers(config) {
     return {
       type: "give-items",
       title: "Exploración de números",
-      instruction: `${helper} dice: Dame ${amount} ${object}. Arrastra exactamente esa cantidad.`,
+      instruction: `Rockie ${helper} dice: Dame ${amount} ${object}. Arrastra exactamente esa cantidad.`,
       helper,
       object,
       answer: amount,
